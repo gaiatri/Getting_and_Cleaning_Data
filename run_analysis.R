@@ -22,19 +22,19 @@ train <- cbind(subject_train, y_train, x_train) # dimensions are 7352 * 563
 # ********** Step 1 of Cleaning Data *************
 # Merge the training and the test sets to create one data set.
 full_dataset <- rbind(test, train) # dimensions are 10,299 * 563
-dim(full_dataset)
+#dim(full_dataset)
 
 # ********** Step 2 of Cleaning Data *************
 #Extract only the measurements on the mean and standard deviation for each measurement. 
 
 features <- read.table("features.txt") # dimensions are 561*2 
-dim(features)
+#dim(features)
 names(full_dataset)[1] <- "subject"
 names(full_dataset)[2] <- "activity"
 names(full_dataset)[3:563] <- as.character(features[,2])
 
 mean_std_data <- full_dataset[, grep("subject|activity|mean\\(\\)|std\\(\\)", colnames(full_dataset))] # dimensions are 10,299 * 68
-dim(mean_std_data)
+#dim(mean_std_data)
 
 # ********** Step 3 of Cleaning Data *************
 # Use descriptive activity names to name the activities in the data set
