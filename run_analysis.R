@@ -46,10 +46,14 @@ mean_std_data[,2] <- activity_factor
 # ********** Step 4 of Cleaning Data *************
 #Appropriately label the data set with descriptive variable names. 
 
-names(mean_std_data) <- gsub("-", "", names(mean_std_data))
-names(mean_std_data) <- gsub("mean", "Mean", names(mean_std_data))
-names(mean_std_data) <- gsub("std", "Std", names(mean_std_data))
-names(mean_std_data) <- gsub("\\()", "", names(mean_std_data))
+names(mean_std_data) <- gsub("-", "", names(mean_std_data)) # Removing "-" in variable names
+names(mean_std_data) <- gsub("\\()", "", names(mean_std_data)) # Removing "()" in variable names
+names(mean_std_data) <- gsub("mean", "Mean", names(mean_std_data)) # Making all variables camel case
+names(mean_std_data) <- gsub("std", "Std", names(mean_std_data)) # Making all variables camel case
+names(mean_std_data) <- gsub("BodyBody", "Body", names(mean_std_data)) # Fixing a naming error
+names(mean_std_data) <- gsub("^t", "time", names(mean_std_data)) # making variable names more descriptive
+names(mean_std_data) <- gsub("^f", "freq", names(mean_std_data)) # making variable names more descriptive
+
 
 # ********** Step 5 of Cleaning Data *************
 #From the data set in step 4, create a second, independent tidy data set with the average of each variable for each activity and each subject.
@@ -67,8 +71,6 @@ tidy_data <-
 # Finally, output the data to a text file
 write.table(tidy_data, "../tidy_data.txt", row.names = FALSE)
 
-# Function to view the tidy data text file on R: read.table("tidy_data.txt")
-# You can also open tidy_data.txt on Notepad++ or a similar text editor.
 
 
 
