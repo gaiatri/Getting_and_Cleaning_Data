@@ -65,10 +65,10 @@ tidy_data <-
 # Dimensions of tidy_data are 180 * 68
 
 # Finally, output the data to a text file
-write.table(tidy_data, "tidy_data.txt", row.name = FALSE)
+write.table(tidy_data, "../tidy_data.txt", row.names = FALSE)
 
-# Function to view the text file created above
-read.table("tidy_data.txt")
+# Function to view the tidy data text file on R: read.table("tidy_data.txt")
+# You can also open tidy_data.txt on Notepad++ or a similar text editor.
 
 
 
