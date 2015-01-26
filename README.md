@@ -2,7 +2,7 @@
 ReadMe
 ================
 
-The basic principles of tidy data<sup>1</sup>, as outlined in Wickham's paper<sup>1</sup>, are:
+The basic principles of tidy data<sup>1</sup>, as outlined in Wickham's paper, are:
   1. Each observation forms a row
   2. Each variable forms a column
   3. Each type of observational unit forms a table
@@ -38,7 +38,7 @@ readable, I think I have succeeded in creating a "tidier" data set.
 
     This section illustrates the transformation of messier data into tidier data using every step of the problem.
 
-  #### Step 1 of cleaning data: Merge the training and the test sets to create one data set
+      Step 1 of cleaning data: Merge the training and the test sets to create one data set
   
       - Only the files that would be used in the process/end of producing tidy data are read. This helps in cutting the clutter.
 	    For example, the files from the inertial folder are not read because they simply do not contribute to solving the specific problem asked.
@@ -50,17 +50,17 @@ readable, I think I have succeeded in creating a "tidier" data set.
 	  
 	  - The resultant data set, named full_dataset has 10299 observations and 563 variables, and it pretty much contains all the data we need for analysis.
 	  
-  #### Step 2 of cleaning data: Extract only the measurements on the mean and standard deviation for each measurement
+      Step 2 of cleaning data: Extract only the measurements on the mean and standard deviation for each measurement
   
       - Extracting specific columns necessitates assigning names to the columns in the data set. This provides more meaning to the data, and therefore makes it tidier
 	  
 	  - The resultant data set, mean_std_data, has 10299 observations and 68 rows, and contains just the right amount of data we need to answer questions on mean and standard deviation measurements.
 	  
-  #### Step 3 of cleaning data: Use descriptive activity names to name the activities in the data set
+     Step 3 of cleaning data: Use descriptive activity names to name the activities in the data set
   
       - The activity numbers, which did not make sense before, are now given descriptive names to make it more tidy
 	  
-  #### Step 4 of cleaning data: Appropriately label the data set with descriptive variable names
+     Step 4 of cleaning data: Appropriately label the data set with descriptive variable names
   
       - The attached variable names are made tidier by getting rid of naming styles that do not conform to R naming conventions. Here, characters such as "()" and "-"
 	    are removed. 
@@ -69,7 +69,7 @@ readable, I think I have succeeded in creating a "tidier" data set.
 	  
 	  - A few of the variable names had the pattern "BodyBody" which was clearly a naming error. These instances were replaced with "Body"
 	  
-  #### Step 5 of cleaning data: From the data set in step 4, create a second, independent tidy data set with the average of each variable for each activity and each subject
+    Step 5 of cleaning data: From the data set in step 4, create a second, independent tidy data set with the average of each variable for each activity and each subject
   
       - The already "quite tidy" dataset from the previous step is condensed to produce average values for each unique subject-activity combination. 
 	    This makes the data less long(less narrow) than before and also makes it easier to interpret the context of the experiment.
