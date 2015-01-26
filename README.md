@@ -38,7 +38,7 @@ readable, I think I have succeeded in creating a "tidier" data set.
 
     This section illustrates the transformation of messier data into tidier data using every step of the problem.
 
-      <b>Step 1 of cleaning data</b>: Merge the training and the test sets to create one data set
+      Step 1 of cleaning data: Merge the training and the test sets to create one data set
   
       - Only the files that would be used in the process/end of producing tidy data are read. 
         This helps in cutting the clutter.
@@ -54,7 +54,7 @@ readable, I think I have succeeded in creating a "tidier" data set.
       - The resultant data set, named full_dataset has 10299 observations and 563 variables, and it pretty much 
         contains all the data we need for analysis.
 	  
-      <b>Step 2 of cleaning data</b>: Extract only the measurements on the mean and standard deviation for each measurement
+      Step 2 of cleaning data: Extract only the measurements on the mean and standard deviation for each measurement
   
       - Extracting specific columns necessitates assigning names to the columns in the data set. 
         This provides more meaning to the data, and therefore makes it tidier
@@ -62,11 +62,11 @@ readable, I think I have succeeded in creating a "tidier" data set.
       - The resultant data set, mean_std_data, has 10299 observations and 68 rows, and contains just the right 
         amount of data we need to answer questions on mean and standard deviation measurements.
 	  
-      <b>Step 3 of cleaning data</b>: Use descriptive activity names to name the activities in the data set
+      Step 3 of cleaning data: Use descriptive activity names to name the activities in the data set
   
       - The activity numbers, which did not make sense before, are now given descriptive names to make it more tidy
 	  
-      <b>Step 4 of cleaning data</b>: Appropriately label the data set with descriptive variable names
+      Step 4 of cleaning data: Appropriately label the data set with descriptive variable names
   
       - The attached variable names are made tidier by getting rid of naming styles that do not conform to R naming
         conventions. Here, characters such as "()" and "-" are removed. 
@@ -76,7 +76,7 @@ readable, I think I have succeeded in creating a "tidier" data set.
       - A few of the variable names had the pattern "BodyBody" which was clearly a naming error. 
         These instances were replaced with "Body"
 	  
-      <b>Step 5 of cleaning data</b>: From the data set in step 4, create a second, independent tidy data set 
+      Step 5 of cleaning data: From the data set in step 4, create a second, independent tidy data set 
          with the average of each variable for each activity and each subject
   
       - The already "quite tidy" dataset from the previous step is condensed to produce average values for each 
@@ -89,7 +89,7 @@ readable, I think I have succeeded in creating a "tidier" data set.
 
 ### Choice of narrow(long) or wide data set
 
-      - From reading the discussion thread on tidy data<sup>2</sup>, I realized that the choice of a wide or 
+      - From reading the discussion thread on tidy data, I realized that the choice of a wide or 
         narrow tidy data set depends on the specific problem.
 	  
       - My final tidy data set, tidy_data, is considered wide since the observations are spread across 
@@ -97,7 +97,7 @@ readable, I think I have succeeded in creating a "tidier" data set.
 	  
       - In wide format, each observation includes all the measurement features for an observation of an 
 	activity at a moment, wheread in narrow format it is a specific subject/activity/observation
-	combination<sup>2</sup>
+	combination
 		
       - In the context of the problem, I think it makes sense to keep it this way instead of melting the data
         to make it narrow. In the process of making data tidier, the length of the data set has significantly
