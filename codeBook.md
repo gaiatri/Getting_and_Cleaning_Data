@@ -49,19 +49,20 @@ All the variables are of type double (numeric) and are of slightly variable leng
 Since the measurements are normalized, they are unitless.<sup>2</sup>
 The numbers fall within the range [-1,1].
 
-#### Glossary of component terms in the measured variables:
-time - time domain of the sensor signal.
-freq - frequency domain of the sensor signal.
-Acc  - the linear acceleration component of the sensor signal obtained from accelerometer readings.
-Gyro - the angular velocity component of the sensor signal obtained from gyroscope readings.
-Body - the body motion component of acceleration or angular velocity.
-Gravity - the gravitational motion component of acceleration.
-Jerk - derivative of linear acceleration or angular velocity with respect to time.
-Mag - magnitude component of linear acceleration or angular velocity without considering the direction.
-JerkMag - magnitude component of jerk(derivative of linear acceleration or angular velocity) without considering the direction.
-Mean - mean for several readings of that particular measurement.
-Std  - standard deviation for several readings of that particular measurement.
-X, Y, Z - 3-axial signals in the X, Y and Z directions of the smartphone.
+#### Glossary of component terms in the measured variables
+
+- time - time domain of the sensor signal.
+- freq - frequency domain of the sensor signal.
+- Acc  - the linear acceleration component of the sensor signal obtained from accelerometer readings.
+- Gyro - the angular velocity component of the sensor signal obtained from gyroscope readings.
+- Body - the body motion component of acceleration or angular velocity.
+- Gravity - the gravitational motion component of acceleration.
+- Jerk - derivative of linear acceleration or angular velocity with respect to time.
+- Mag - magnitude component of linear acceleration or angular velocity without considering the direction.
+- JerkMag - magnitude component of jerk(derivative of linear acceleration or angular velocity) without considering the direction.
+- Mean - mean for several readings of that particular measurement.
+- Std  - standard deviation for several readings of that particular measurement.
+- X, Y, Z - 3-axial signals in the X, Y and Z directions of the smartphone.
 
 The full list of measured variables in the tidy data set and their brief description:
 Note: The values in the tidy data set are averages of the said measurements for each subject-activity combination
