@@ -25,20 +25,20 @@ Dimensions of tidy data set: 180 * 68, plus a header row with descriptive variab
 ###Fixed variables a.k.a dimensions
 The tidy data set is grouped by both of these dimension variables.
 
-subject                    1 
-                           Subject identifier - type integer
-                           1 - 30     Unique identifier assigned to each subject(volunteer) in the experiment.
+subject   ------------------ length 1 
+                           - Subject identifier -----   type integer
+                           - values 1 - 30  ---------   Unique identifier assigned to each subject(volunteer) in the experiment.
 			
-activity	               1
-       		               Activity identifier - type factor
-			               1 - 6      Unique identifier assigned to each activity performed by the subject.
+activity  ------------------ length 1
+       		           - Activity identifier ----   type factor
+			   - values 1 - 6   ---------   Unique identifier assigned to each activity performed by the subject.
 						 
-			               1 - WALKING
-			               2 - WALKING_UPSTAIRS
-			               3 - WALKING_DOWNSTAIRS
-			               4 - SITTING
-			               5 - STANDING
-			               6 - LAYING
+			              - 1 - WALKING
+			              - 2 - WALKING_UPSTAIRS
+			              - 3 - WALKING_DOWNSTAIRS
+			              - 4 - SITTING
+			              - 5 - STANDING
+			              - 6 - LAYING
 			
 			
 ### Measured variables	
