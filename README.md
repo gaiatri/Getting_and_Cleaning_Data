@@ -38,58 +38,73 @@ readable, I think I have succeeded in creating a "tidier" data set.
 
     This section illustrates the transformation of messier data into tidier data using every step of the problem.
 
-      Step 1 of cleaning data: Merge the training and the test sets to create one data set
+      <b>Step 1 of cleaning data</b>: Merge the training and the test sets to create one data set
   
-      - Only the files that would be used in the process/end of producing tidy data are read. This helps in cutting the clutter.
-	    For example, the files from the inertial folder are not read because they simply do not contribute to solving the specific problem asked.
+      - Only the files that would be used in the process/end of producing tidy data are read. 
+        This helps in cutting the clutter.
+	For example, the files from the inertial folder are not read because they simply do not contribute 
+	to solving the specific problem asked.
 		
-	  - While merging the subject and activity together with the corresponding reading values for test and train, it's done in the order of subject, activity and the values. 
-	    This is done to ensure that the resulting data set is clear and readable, with the larger problem in mind.
+      - While merging the subject and activity together with the corresponding reading values for test and train, 
+        it's done in the order of subject, activity and the values. 
+	This is done to ensure that the resulting data set is clear and readable, with the larger problem in mind.
 		
-	  - The test and train data sets are merged to make processing of data easier and to avoid redundancy.
+      - The test and train data sets are merged to make processing of data easier and to avoid redundancy.
 	  
-	  - The resultant data set, named full_dataset has 10299 observations and 563 variables, and it pretty much contains all the data we need for analysis.
+      - The resultant data set, named full_dataset has 10299 observations and 563 variables, and it pretty much 
+        contains all the data we need for analysis.
 	  
-      Step 2 of cleaning data: Extract only the measurements on the mean and standard deviation for each measurement
+      <b>Step 2 of cleaning data</b>: Extract only the measurements on the mean and standard deviation for each measurement
   
-      - Extracting specific columns necessitates assigning names to the columns in the data set. This provides more meaning to the data, and therefore makes it tidier
+      - Extracting specific columns necessitates assigning names to the columns in the data set. 
+        This provides more meaning to the data, and therefore makes it tidier
+	   
+      - The resultant data set, mean_std_data, has 10299 observations and 68 rows, and contains just the right 
+        amount of data we need to answer questions on mean and standard deviation measurements.
 	  
-	  - The resultant data set, mean_std_data, has 10299 observations and 68 rows, and contains just the right amount of data we need to answer questions on mean and standard deviation measurements.
-	  
-     Step 3 of cleaning data: Use descriptive activity names to name the activities in the data set
+      <b>Step 3 of cleaning data</b>: Use descriptive activity names to name the activities in the data set
   
       - The activity numbers, which did not make sense before, are now given descriptive names to make it more tidy
 	  
-     Step 4 of cleaning data: Appropriately label the data set with descriptive variable names
+      <b>Step 4 of cleaning data</b>: Appropriately label the data set with descriptive variable names
   
-      - The attached variable names are made tidier by getting rid of naming styles that do not conform to R naming conventions. Here, characters such as "()" and "-"
-	    are removed. 
+      - The attached variable names are made tidier by getting rid of naming styles that do not conform to R naming
+        conventions. Here, characters such as "()" and "-" are removed. 
 		
-	  - Camel casing is adopted to make it consistent and readable
+      - Camel casing is adopted to make it consistent and readable
 	  
-	  - A few of the variable names had the pattern "BodyBody" which was clearly a naming error. These instances were replaced with "Body"
+      - A few of the variable names had the pattern "BodyBody" which was clearly a naming error. 
+        These instances were replaced with "Body"
 	  
-    Step 5 of cleaning data: From the data set in step 4, create a second, independent tidy data set with the average of each variable for each activity and each subject
+      <b>Step 5 of cleaning data</b>: From the data set in step 4, create a second, independent tidy data set 
+         with the average of each variable for each activity and each subject
   
-      - The already "quite tidy" dataset from the previous step is condensed to produce average values for each unique subject-activity combination. 
-	    This makes the data less long(less narrow) than before and also makes it easier to interpret the context of the experiment.
+      - The already "quite tidy" dataset from the previous step is condensed to produce average values for each 
+        unique subject-activity combination. 
+	This makes the data less long(less narrow) than before and also makes it easier to interpret the context 
+	of the experiment.
 		
-	  - The resultant data set, tidy_data, has only 180 observations (30 subjects * 6 activities) and 68 variables.
+      - The resultant data set, tidy_data, has only 180 observations (30 subjects * 6 activities) and 68 variables.
 		
 
 ### Choice of narrow(long) or wide data set
 
-      - From reading the discussion thread on tidy data<sup>2</sup>, I realized that the choice of a wide or narrow tidy data set depends on the specific problem.
+      - From reading the discussion thread on tidy data<sup>2</sup>, I realized that the choice of a wide or 
+        narrow tidy data set depends on the specific problem.
 	  
-      - My final tidy data set, tidy_data, is considered wide since the observations are spread across several columns.
+      - My final tidy data set, tidy_data, is considered wide since the observations are spread across 
+        several columns.
 	  
-	  - In wide format, each observation includes all the measurement features for an observation of an activity at a moment, wheread in narrow format it is a 
-	    specific subject/activity/observation combination<sup>2</sup>
+      - In wide format, each observation includes all the measurement features for an observation of an 
+	activity at a moment, wheread in narrow format it is a specific subject/activity/observation
+	combination<sup>2</sup>
 		
-      - In the context of the problem, I think it makes sense to keep it this way instead of melting the data to make it narrow. In the process of making data tidier,
-        the length of the data set has significantly reduced from 10,299 rows to 180 rows, making the data set look more balanced.
+      - In the context of the problem, I think it makes sense to keep it this way instead of melting the data
+        to make it narrow. In the process of making data tidier, the length of the data set has significantly
+        reduced from 10,299 rows to 180 rows, making the data set look more balanced.
 		
-      - Melting the data set would make it very long, with dimensions 11,880*3, making it more difficult to read. I prefer the wide format for this particular problem.		
+      - Melting the data set would make it very long, with dimensions 11,880*3, making it more difficult to read. 
+        I prefer the wide format for this particular problem.		
 		
 
 ### General coding steps for run_analysis.R
@@ -121,6 +136,7 @@ readable, I think I have succeeded in creating a "tidier" data set.
 ### Expected Output
 
 "tidy_data.txt" -- a text file saved to your working directory, containing the tidy data set with the afore-mentioned variables, and with correct calculations of values.
+
 https://github.com/gaiatri/Getting_and_Cleaning_Data/blob/master/tidy_data.txt - a copy of the same file from the GitHub repository.	
 
 
